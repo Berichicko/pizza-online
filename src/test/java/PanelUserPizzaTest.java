@@ -22,13 +22,13 @@ public class PanelUserPizzaTest extends BaseTest {
     public void testAvailabilityPizzaUserPanelOrder() {
         Assert.assertTrue(terraPizzaHomePage.isDisplayedCatalogPizza());
         Assert.assertTrue(catalogPizzaPage.isDisplayedPizzaMargarita());
-//        Assert.assertTrue(catalogPizzaPage.isDisplayedButtonChoosePizzaMargarita());
-//        Assert.assertTrue(catalogPizzaPage.isDisplayedPanelUserOrder());
-//        Assert.assertTrue(catalogPizzaPage.isDisplayedPizzaPanelUserOrder());
-//        Assert.assertTrue(catalogPizzaPage.isDisplayedNamePizzaPanelUserOrder());
-//        Assert.assertTrue(catalogPizzaPage.isDisplayedSizePizzaPanelUserOrder());
-//        Assert.assertTrue(catalogPizzaPage.isDisplayedWeightPizzaPanelUserOrder());
-//        Assert.assertTrue(catalogPizzaPage.isDisplayedPricePizzaPanelUserOrder());
-//        Assert.assertTrue(catalogPizzaPage.isDisplayedAmountPizzaPanelUserOrder());
+        Assert.assertTrue(catalogPizzaPage.isDisplayedButtonChoosePizzaMargarita());
+        Assert.assertTrue(catalogPizzaPage.isDisplayedPanelUserOrder());
+        Assert.assertTrue(catalogPizzaPage.isDisplayedPizzaPanelUserOrder());
+        Assert.assertTrue(catalogPizzaPage.isDisplayedNamePizzaPanelUserOrder());
+        Assert.assertTrue(catalogPizzaPage.isDisplayedSizePizzaPanelUserOrder());
+        Assert.assertTrue(catalogPizzaPage.isDisplayedWeightPizzaPanelUserOrder());
+        Assert.assertTrue(catalogPizzaPage.isDisplayedPricePizzaPanelUserOrder());
+        Assert.assertTrue(catalogPizzaPage.isDisplayedAmountPizzaPanelUserOrder());
     }
 }

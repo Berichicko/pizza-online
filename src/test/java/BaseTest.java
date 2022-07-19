@@ -18,6 +18,12 @@ public class BaseTest {
 
     @AfterClass
     public static void closeConnection() {
+        try {
+            Thread.sleep(2500);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
         driver.quit();
+
     }
 }
