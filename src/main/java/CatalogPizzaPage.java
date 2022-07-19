@@ -9,13 +9,14 @@ import java.time.Duration;
 public class CatalogPizzaPage {
 
     private final By PIZZA_MARGARITA_LOCATOR = By.xpath("//div[@data-item-id='576']");
-    private final By BUTTON_CHOOSE_PIZZA_MARGARITA_LOCATOR = By.xpath("//button[@data-id='360']");
-    private final By PANEL_USER_ORDER_LOCATOR = By.xpath("//div[@class='basket__btn-top basket__top basket__btn-top--sm']");
-    private final By CATALOG_NAME_PIZZA_MARGARITA_LOCATOR = By.xpath("//h1[contains(text(),'Пицца Маргарита')]");
-    private final By CATALOG_PRICE_PIZZA_MARGARITA_LOCATOR = By.xpath("//span[@class='price-val price-val-id-364'][2]");
+    private final By BUTTON_CHOOSE_PIZZA_MARGARITA_LOCATOR = By.xpath("//button[@data-id='364']");
+    private final By CATALOG_NAME_PIZZA_MARGARITA_LOCATOR = By.xpath("//div[contains(text(),'Пицца Маргарита')]");
+    private final By CATALOG_PRICE_PIZZA_MARGARITA_LOCATOR = By.xpath("//span[@class='price-val price-val-id-364']");
     private final By PIZZA_PANEL_USER_ORDER_LOCATOR = By.xpath("//div[@class='basket__products-item-info-wrap']");
-    private final By PIZZA_NAME_PANEL_USER_ORDER_LOCATOR = By.xpath("//div[@class='basket__products-item-name']");
+    private final By PIZZA_NAME_PANEL_USER_ORDER_LOCATOR = By.xpath("//div[@class='basket__products-item-name' and contains(text(),'Пицца Маргарита')]");
     private final By PIZZA_PRICE_PANEL_USER_ORDER_LOCATOR = By.xpath("//span[@class='main-prod-price']");
+    private final By PANEL_USER_ORDER_LOCATOR = By.xpath("//div[@class='basket__btn-top basket__top basket__btn-top--sm']");
+
     private final WebDriver driver;
 
     public CatalogPizzaPage(WebDriver driver) {
@@ -38,20 +39,21 @@ public class CatalogPizzaPage {
         waitWebElementIsVisible(menu).click();
     }
 
-    public boolean isDisplayedPizzaMargarita() {
-        return driver.findElement(PIZZA_MARGARITA_LOCATOR).isDisplayed();
+    public boolean isEnabledPizzaMargarita() {
+        return driver.findElement(PIZZA_MARGARITA_LOCATOR).isEnabled();
     }
 
-    public boolean isDisplayedPanelUserOrder() {
-        return driver.findElement(PANEL_USER_ORDER_LOCATOR).isDisplayed();
+    public boolean isEnabledPanelUserOrder() {
+        return driver.findElement(PANEL_USER_ORDER_LOCATOR).isEnabled();
     }
 
-    public boolean isDisplayedPizzaPanelUserOrder() {
-        return driver.findElement(PIZZA_PANEL_USER_ORDER_LOCATOR).isDisplayed();
+    public boolean isEnabledPizzaPanelUserOrder() {
+        return driver.findElement(PIZZA_PANEL_USER_ORDER_LOCATOR).isEnabled();
     }
 
     public String getNameCatalogPizzaMargarita() {
         return driver.findElement(CATALOG_NAME_PIZZA_MARGARITA_LOCATOR).getText();
+
     }
 
     public String getPriceCatalogPizzaMargarita() {

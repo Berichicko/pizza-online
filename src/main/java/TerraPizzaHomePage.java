@@ -10,8 +10,8 @@ public class TerraPizzaHomePage {
         this.driver = driver;
     }
 
-    public boolean isDisplayedCatalogPizza() {
-        return driver.findElement(PIZZA_LOCATOR).isDisplayed();
+    public boolean isEnabledCatalogPizza() {
+        return driver.findElement(PIZZA_LOCATOR).isEnabled();
     }
 
     public void clickCatalogPizza() {
