@@ -12,6 +12,7 @@ public class PanelUserPizzaTest extends BaseTest {
     public void testOpenPage() {
         terraPizzaHomePage = new TerraPizzaHomePage(driver);
         catalogPizzaPage = new CatalogPizzaPage(driver);
+        terraPizzaHomePage.clickCloseWindowCookie();
         terraPizzaHomePage.clickCatalogPizza();
         executor.executeScript("window.scrollBy(0,500)", "");
         catalogPizzaPage.clickButtonChoosePizzaMargarita();

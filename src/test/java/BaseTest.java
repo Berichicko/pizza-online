@@ -4,6 +4,7 @@ import org.junit.BeforeClass;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+
 public class BaseTest {
     private final static String URL = "https://terrapizza.by/";
     protected static WebDriver driver;
@@ -14,6 +15,9 @@ public class BaseTest {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.get(URL);
+
+
+
     }
 
     @AfterClass
