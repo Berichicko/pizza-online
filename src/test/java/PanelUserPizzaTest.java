@@ -19,16 +19,27 @@ public class PanelUserPizzaTest extends BaseTest {
     }
 
     @Test
-    public void testAvailabilityPizzaUserPanelOrder() {
-        Assert.assertTrue(terraPizzaHomePage.isDisplayedCatalogPizza());
+    public void testIsDisplayedPizzaMargarita() {
         Assert.assertTrue(catalogPizzaPage.isDisplayedPizzaMargarita());
-        Assert.assertTrue(catalogPizzaPage.isDisplayedButtonChoosePizzaMargarita());
+    }
+
+    @Test
+    public void testIsDisplayedPanelUserOrder() {
         Assert.assertTrue(catalogPizzaPage.isDisplayedPanelUserOrder());
+    }
+
+    @Test
+    public void testIsDisplayedPizzaPanelUserOrder() {
         Assert.assertTrue(catalogPizzaPage.isDisplayedPizzaPanelUserOrder());
-        Assert.assertTrue(catalogPizzaPage.isDisplayedNamePizzaPanelUserOrder());
-        Assert.assertTrue(catalogPizzaPage.isDisplayedSizePizzaPanelUserOrder());
-        Assert.assertTrue(catalogPizzaPage.isDisplayedWeightPizzaPanelUserOrder());
-        Assert.assertTrue(catalogPizzaPage.isDisplayedPricePizzaPanelUserOrder());
-        Assert.assertTrue(catalogPizzaPage.isDisplayedAmountPizzaPanelUserOrder());
+    }
+
+    @Test
+    public void testNameCatalogPizzaGetNameUserOderPizza() {
+        Assert.assertEquals(catalogPizzaPage.getNameCatalogPizzaMargarita(), catalogPizzaPage.getNameUserPanelOrderPizzaMargarita());
+    }
+
+    @Test
+    public void testPriceCatalogPizzaGetPriceUserOderPizza() {
+        Assert.assertEquals(catalogPizzaPage.getPriceCatalogPizzaMargarita(), catalogPizzaPage.getPriceUserPanelOrderPizzaMargarita());
     }
 }
