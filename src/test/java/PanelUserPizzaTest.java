@@ -14,11 +14,6 @@ public class PanelUserPizzaTest extends BaseTest {
     }
 
     @Test
-    public void testIsEnabledPanelUserOrder() {
-        Assert.assertTrue(catalogPizzaPage.isEnabledPanelUserOrder());
-    }
-
-    @Test
     public void testIsEnabledPizzaPanelUserOrder() {
         Assert.assertTrue(catalogPizzaPage.isEnabledPizzaPanelUserOrder());
     }

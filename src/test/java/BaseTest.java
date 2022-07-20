@@ -4,7 +4,6 @@ import org.junit.BeforeClass;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-
 public class BaseTest {
     private final static String URL = "https://terrapizza.by/";
     public static WebDriver driver;
@@ -12,7 +11,7 @@ public class BaseTest {
     public static CatalogPizzaPage catalogPizzaPage;
 
     @BeforeClass
-    public static void openConnection() {
+    public static void createConditionsTests() {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         driver.manage().window().maximize();
@@ -23,16 +22,10 @@ public class BaseTest {
         terraPizzaHomePage.clickCatalogPizza();
         catalogPizzaPage.clickButtonChoosePizzaMargarita();
         catalogPizzaPage.clickPanelUserOrderProduct();
-
     }
 
     @AfterClass
-    public static void closeConnection() {
-        try {
-            Thread.sleep(2500);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
-       driver.close();
+    public static void closeConnectionTests() {
+        driver.close();
     }
 }

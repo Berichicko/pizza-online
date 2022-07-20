@@ -3,7 +3,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import java.time.Duration;
 
 public class CatalogPizzaPage {
@@ -29,7 +28,8 @@ public class CatalogPizzaPage {
     }
 
     public WebElement waitWebElementIsVisible(WebElement element) {
-        new WebDriverWait(driver, Duration.ofSeconds(3)).until(ExpectedConditions.visibilityOf(element));
+        new WebDriverWait(driver, Duration.ofSeconds(3)).
+                until(ExpectedConditions.visibilityOf(element));
         return element;
     }
 
@@ -42,17 +42,12 @@ public class CatalogPizzaPage {
         return driver.findElement(PIZZA_MARGARITA_LOCATOR).isEnabled();
     }
 
-    public boolean isEnabledPanelUserOrder() {
-        return driver.findElement(PANEL_USER_ORDER_LOCATOR).isEnabled();
-    }
-
     public boolean isEnabledPizzaPanelUserOrder() {
         return driver.findElement(PIZZA_PANEL_USER_ORDER_LOCATOR).isEnabled();
     }
 
     public String getNameCatalogPizzaMargarita() {
         return driver.findElement(CATALOG_NAME_PIZZA_MARGARITA_LOCATOR).getText();
-
     }
 
     public String getPriceCatalogPizzaMargarita() {
@@ -64,7 +59,8 @@ public class CatalogPizzaPage {
     }
 
     public String getPriceUserPanelOrderPizzaMargarita() {
-        return driver.findElement(PIZZA_PRICE_PANEL_USER_ORDER_LOCATOR).getAttribute("innerHTML");
+        return driver.findElement(PIZZA_PRICE_PANEL_USER_ORDER_LOCATOR).
+                getAttribute("innerHTML");
     }
 
     public String getDefaultPriceUserPanelOrderPizzaMargarita() {
