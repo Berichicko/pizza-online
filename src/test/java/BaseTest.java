@@ -9,6 +9,7 @@ public class BaseTest {
     private final static String URL = "https://terrapizza.by/";
     protected static WebDriver driver;
 
+
     @BeforeClass
     public static void openConnection() {
         WebDriverManager.chromedriver().setup();

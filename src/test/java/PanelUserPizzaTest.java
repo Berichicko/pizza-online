@@ -52,11 +52,4 @@ public class PanelUserPizzaTest extends BaseTest {
         Assert.assertEquals(catalogPizzaPage.getPriceCatalogPizzaMargarita(),
                 catalogPizzaPage.getPriceUserPanelOrderPizzaMargarita());
     }
-
-
-    @Test
-    public void testDefaultPriceMargaritaGetPriceUserOderPizza() {
-        Assert.assertEquals(catalogPizzaPage.getDefaultPriceUserPanelOrderPizzaMargarita(),
-                catalogPizzaPage.getPriceUserPanelOrderPizzaMargarita());
-    }
 }
