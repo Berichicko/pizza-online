@@ -7,8 +7,9 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 public class BaseTest {
     private final static String URL = "https://terrapizza.by/";
-    protected static WebDriver driver;
-
+    public static WebDriver driver;
+    public static TerraPizzaHomePage terraPizzaHomePage;
+    public static CatalogPizzaPage catalogPizzaPage;
 
     @BeforeClass
     public static void openConnection() {
@@ -16,6 +17,12 @@ public class BaseTest {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.get(URL);
+        terraPizzaHomePage = new TerraPizzaHomePage(driver);
+        catalogPizzaPage = new CatalogPizzaPage(driver);
+        terraPizzaHomePage.clickCloseWindowCookie();
+        terraPizzaHomePage.clickCatalogPizza();
+        catalogPizzaPage.clickButtonChoosePizzaMargarita();
+        catalogPizzaPage.clickPanelUserOrderProduct();
 
     }
 
@@ -26,6 +33,6 @@ public class BaseTest {
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
-       driver.quit();
+       driver.close();
     }
 }

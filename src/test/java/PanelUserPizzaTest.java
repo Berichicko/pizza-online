@@ -1,43 +1,25 @@
 import org.junit.Assert;
-import org.junit.Before;
 import org.junit.Test;
-import org.openqa.selenium.JavascriptExecutor;
 
 public class PanelUserPizzaTest extends BaseTest {
-    JavascriptExecutor executor = (JavascriptExecutor) driver;
-    private TerraPizzaHomePage terraPizzaHomePage;
-    private CatalogPizzaPage catalogPizzaPage;
-
-    @Before
-    public void testOpenPage() {
-        terraPizzaHomePage = new TerraPizzaHomePage(driver);
-        catalogPizzaPage = new CatalogPizzaPage(driver);
-        terraPizzaHomePage.clickCloseWindowCookie();
-        terraPizzaHomePage.clickCatalogPizza();
-        executor.executeScript("window.scrollBy(0,500)", "");
-        catalogPizzaPage.clickButtonChoosePizzaMargarita();
-        catalogPizzaPage.clickPanelUserOrderProduct();
-    }
-
-
 
     @Test
-    public void isEnabledCatalogPizza() {
+    public void testIsEnabledCatalogPizza() {
         Assert.assertTrue(terraPizzaHomePage.isEnabledCatalogPizza());
     }
 
     @Test
-    public void testIsDisplayedPizzaMargarita() {
+    public void testIsEnabledPizzaMargarita() {
         Assert.assertTrue(catalogPizzaPage.isEnabledPizzaMargarita());
     }
 
     @Test
-    public void testIsDisplayedPanelUserOrder() {
+    public void testIsEnabledPanelUserOrder() {
         Assert.assertTrue(catalogPizzaPage.isEnabledPanelUserOrder());
     }
 
     @Test
-    public void testIsDisplayedPizzaPanelUserOrder() {
+    public void testIsEnabledPizzaPanelUserOrder() {
         Assert.assertTrue(catalogPizzaPage.isEnabledPizzaPanelUserOrder());
     }
 
@@ -50,6 +32,12 @@ public class PanelUserPizzaTest extends BaseTest {
     @Test
     public void testPriceCatalogPizzaGetPriceUserOderPizza() {
         Assert.assertEquals(catalogPizzaPage.getPriceCatalogPizzaMargarita(),
+                catalogPizzaPage.getPriceUserPanelOrderPizzaMargarita());
+    }
+
+    @Test
+    public void testPriceMargaritaPizzaGetPriceUserOderPizza() {
+        Assert.assertEquals(catalogPizzaPage.getDefaultPriceUserPanelOrderPizzaMargarita(),
                 catalogPizzaPage.getPriceUserPanelOrderPizzaMargarita());
     }
 }
