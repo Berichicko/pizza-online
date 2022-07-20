@@ -16,8 +16,6 @@ public class BaseTest {
         driver.manage().window().maximize();
         driver.get(URL);
 
-
-
     }
 
     @AfterClass
@@ -27,7 +25,6 @@ public class BaseTest {
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
-        driver.quit();
-
+       driver.quit();
     }
 }

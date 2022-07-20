@@ -15,6 +15,9 @@ public class CatalogPizzaPage {
     private final By PIZZA_PANEL_USER_ORDER_LOCATOR = By.xpath("//div[@class='basket__products-item-info-wrap']");
     private final By PIZZA_NAME_PANEL_USER_ORDER_LOCATOR = By.xpath("//div[contains(text(), 'Пицца Маргарита')][last()] ");
     private final By PIZZA_PRICE_PANEL_USER_ORDER_LOCATOR = By.xpath("//div[contains(@class,'basket__sum') ]/span");
+    private final By MARGARITA_PRICE_PANEL_USER_ORDER_LOCATOR = By.xpath("//span[@class='main-prod-price']");
+
+
     private final By PANEL_USER_ORDER_LOCATOR = By.xpath("//div[@class='basket__btn-top basket__top basket__btn-top--sm']");
 
 
@@ -68,5 +71,9 @@ public class CatalogPizzaPage {
 
     public String getPriceUserPanelOrderPizzaMargarita() {
         return driver.findElement(PIZZA_PRICE_PANEL_USER_ORDER_LOCATOR).getAttribute("innerHTML");
+    }
+
+    public String getDefaultPriceUserPanelOrderPizzaMargarita() {
+        return driver.findElement(MARGARITA_PRICE_PANEL_USER_ORDER_LOCATOR).getAttribute("innerHTML");
     }
 }
