@@ -1,31 +1,28 @@
-import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
+import pages.CatalogPizzaPage;
+import pages.TerraPizzaHomePage;
+import steps.Steps;
+import driver.WebDriverInitiated;
 
-public class BaseTest {
-    private final static String URL = "https://terrapizza.by/";
-    public static WebDriver driver;
+public class BaseTest extends WebDriverInitiated {
+
     public static TerraPizzaHomePage terraPizzaHomePage;
     public static CatalogPizzaPage catalogPizzaPage;
+    public static Steps steps;
 
     @BeforeClass
     public static void createConditionsTests() {
-        WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
-        driver.manage().window().maximize();
-        driver.get(URL);
+        WebDriverInitiated.webDriverSettings();
         terraPizzaHomePage = new TerraPizzaHomePage(driver);
         catalogPizzaPage = new CatalogPizzaPage(driver);
-        terraPizzaHomePage.clickCloseWindowCookie();
-        terraPizzaHomePage.clickCatalogPizza();
-        catalogPizzaPage.clickButtonChoosePizzaMargarita();
-        catalogPizzaPage.clickPanelUserOrderProduct();
-    }
+        steps = new Steps(driver);
+        steps.stepsClicksUser(driver);
+      }
 
     @AfterClass
     public static void closeConnectionTests() {
-        driver.close();
+        driver.quit();
+        driver = null;
     }
 }
