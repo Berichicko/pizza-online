@@ -46,24 +46,24 @@ public class CatalogPizzaPage {
         return driver.findElement(PIZZA_PANEL_USER_ORDER_LOCATOR).isEnabled();
     }
 
-    public String getNameCatalogPizzaMargarita() {
+    public String getCatalogNamePizzaMargarita() {
         return driver.findElement(CATALOG_NAME_PIZZA_MARGARITA_LOCATOR).getText();
     }
 
-    public String getPriceCatalogPizzaMargarita() {
+    public String getCatalogPricePizzaMargarita() {
         return driver.findElement(CATALOG_PRICE_PIZZA_MARGARITA_LOCATOR).getText();
     }
 
-    public String getNameUserPanelOrderPizzaMargarita() {
+    public String getNamePanelUserOrderPizzaMargarita() {
         return driver.findElement(PIZZA_NAME_PANEL_USER_ORDER_LOCATOR).getText();
     }
 
-    public String getPriceUserPanelOrderPizzaMargarita() {
+    public String getPricePanelNameUserOrder() {
         return driver.findElement(PIZZA_PRICE_PANEL_USER_ORDER_LOCATOR).
                 getAttribute("innerHTML");
     }
 
-    public String getDefaultPriceUserPanelOrderPizzaMargarita() {
+    public String getMargaritaPricePanelUserOrder() {
         return driver.findElement(MARGARITA_PRICE_PANEL_USER_ORDER_LOCATOR).getAttribute("innerHTML");
     }
 }

@@ -20,19 +20,19 @@ public class PanelUserPizzaTest extends BaseTest {
 
     @Test
     public void testNameCatalogPizzaGetNameUserOderPizza() {
-        Assert.assertEquals(catalogPizzaPage.getNameCatalogPizzaMargarita(),
-                catalogPizzaPage.getNameUserPanelOrderPizzaMargarita());
+        Assert.assertEquals(catalogPizzaPage.getCatalogNamePizzaMargarita(),
+                catalogPizzaPage.getNamePanelUserOrderPizzaMargarita());
     }
 
     @Test
     public void testPriceCatalogPizzaGetPriceUserOderPizza() {
-        Assert.assertEquals(catalogPizzaPage.getPriceCatalogPizzaMargarita(),
-                catalogPizzaPage.getPriceUserPanelOrderPizzaMargarita());
+        Assert.assertEquals(catalogPizzaPage.getCatalogPricePizzaMargarita(),
+                catalogPizzaPage.getPricePanelNameUserOrder());
     }
 
     @Test
     public void testPriceMargaritaPizzaGetPriceUserOderPizza() {
-        Assert.assertEquals(catalogPizzaPage.getDefaultPriceUserPanelOrderPizzaMargarita(),
-                catalogPizzaPage.getPriceUserPanelOrderPizzaMargarita());
+        Assert.assertEquals(catalogPizzaPage.getMargaritaPricePanelUserOrder(),
+                catalogPizzaPage.getPricePanelNameUserOrder());
     }
 }
